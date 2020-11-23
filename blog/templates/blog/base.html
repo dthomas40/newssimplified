@@ -56,18 +56,11 @@
         <div class="col-md-6">
             <div class="content-section">
                 <h3>Compare Articles</h3>
-<!--                 
+                
                 <textarea id="article1" rows="6" cols="65" placeholder="First Article"></textarea>
-                <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea> -->
+                <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea>
 
-                <form action = "" method = "POST"> 
-                    {% csrf_token %}  
-                    {{ form.article1 }}
-                    {{ form.article2 }}
-                    <input type="submit" value="Process"> 
-                </form> 
-
-                <!-- <button type="button" onclick="processing()">Submit</button> -->
+                <button type="button" onclick="processing()">Submit</button>
 
               </div>
             <div class="content-section">
