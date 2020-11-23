@@ -60,7 +60,7 @@
                 <textarea id="article1" rows="6" cols="65" placeholder="First Article"></textarea>
                 <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea>
 
-                <form action = "processing()" method = "POST"> 
+                <form action = "" onclick="processing()" method = "POST"> 
                     {% csrf_token %}  
                     <input hidden id="article_1" type="text" name="article_1" size="65" placeholder="Article One"><br>
                     <input hidden id="article_2" type="text" name="article_2" size="65" placeholder="Article Two"><br>
