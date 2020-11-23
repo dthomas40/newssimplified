@@ -56,18 +56,19 @@
         <div class="col-md-6">
             <div class="content-section">
                 <h3>Compare Articles</h3>
+                <div>
+                  <form action = "" method = "POST"> 
+                      {% csrf_token %}  
+                      <input id="article_1" type="text" name="article_1" placeholder="Article One"> 
+                      <input id="article_2" type="text" name="article_2" placeholder="Article Two"> 
+                      <input type="submit" value="OK"> 
+                  </form> 
+                </div>
 
-                <form action = "" method = "POST"> 
-                    {% csrf_token %}  
-                    <input id="article_1" type="text" name="article_1" placeholder="Article One"> 
-                    <input id="article_2" type="text" name="article_2" placeholder="Article Two"> 
-                    <input type="submit" value="OK"> 
-                </form> 
+                <textarea id="article1" rows="6" cols="65" placeholder="First Article"></textarea>
+                <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea>
 
-                    <textarea id="article1" rows="6" cols="65" placeholder="First Article"></textarea>
-                    <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea>
-
-                    <button type="button" onclick="processing()">Submit</button>
+                <button type="button" onclick="processing()">Submit</button>
 
               </div>
             <div class="content-section">
