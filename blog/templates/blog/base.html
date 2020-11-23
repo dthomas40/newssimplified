@@ -56,14 +56,14 @@
         <div class="col-md-6">
             <div class="content-section">
                 <h3>Compare Articles</h3>
-                
+<!--                 
                 <textarea id="article1" rows="6" cols="65" placeholder="First Article"></textarea>
-                <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea>
+                <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea> -->
 
-                <form action = "" onclick="processing()" method = "POST"> 
+                <form action = "" method = "POST"> 
                     {% csrf_token %}  
-                    <input hidden id="article_1" type="text" name="article_1" size="65" placeholder="Article One"><br>
-                    <input hidden id="article_2" type="text" name="article_2" size="65" placeholder="Article Two"><br>
+                    <input id="article_1" type="text" name="article_1" size="65" placeholder="Article One"><br>
+                    <input id="article_2" type="text" name="article_2" size="65" placeholder="Article Two"><br>
                     <input type="submit" value="Process"> 
                 </form> 
 
@@ -72,7 +72,7 @@
               </div>
             <div class="content-section">
                 <h3>Result Output</h3>
-                <textarea id="output" rows="17" cols="65"></textarea>
+                <textarea id="output" rows="17" cols="65">{{ s }}</textarea>
             </div>
           </div>
       </div>
