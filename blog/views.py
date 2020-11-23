@@ -46,8 +46,8 @@ posts = [
 def home(request):
     context = {
         'posts': posts
-        's' : request.POST
     }
+    print(request.POST)
     return render(request, 'blog/home.html', context)
 
 
