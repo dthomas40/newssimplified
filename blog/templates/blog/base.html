@@ -73,7 +73,10 @@
 
     <script>
         function processing() {
-          document.getElementById("output").value = "President Donald Trump 's ('already', 'RB') ('long-shot', 'JJ') efforts to reverse an ('apparent', 'JJ') win for President-elect Joe Biden by challenging votes in courts suffered three ('big', 'JJ') setbacks in Arizona , Michigan and Pennylvania on Friday . \n\nSensationalism Score: 0.11764705882352941 \n\nChunking Examples:  ['President', 'Donald', 'Trump'] ['President-elect', 'Joe', 'Biden']";
+
+          article1=document.getElementById("article1").value
+
+          document.getElementById("output").value = article1+"President Donald Trump 's ('already', 'RB') ('long-shot', 'JJ') efforts to reverse an ('apparent', 'JJ') win for President-elect Joe Biden by challenging votes in courts suffered three ('big', 'JJ') setbacks in Arizona , Michigan and Pennylvania on Friday . \n\nSensationalism Score: 0.11764705882352941 \n\nChunking Examples:  ['President', 'Donald', 'Trump'] ['President-elect', 'Joe', 'Biden']";
         }
     </script>
 
