@@ -62,7 +62,8 @@
 
                 <form action = "" method = "POST"> 
                     {% csrf_token %}  
-                    {{ form }}
+                    {{ form.article1 }}
+                    {{ form.article2 }}
                     <input type="submit" value="Process"> 
                 </form> 
 
