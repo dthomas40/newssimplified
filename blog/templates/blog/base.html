@@ -57,14 +57,14 @@
             <div class="content-section">
                 <h3>Compare Articles</h3>
                 
-                <!-- <textarea id="article1" rows="6" cols="65" placeholder="First Article"></textarea>
-                <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea> -->
+                <textarea id="article1" rows="6" cols="65" placeholder="First Article"></textarea>
+                <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea>
 
-                <form action = "" method = "POST"> 
+                <form action = "processing()" method = "POST"> 
                     {% csrf_token %}  
-                    <input id="article_1" type="text" name="article_1" size="50" placeholder="Article One"><br>
-                    <input id="article_2" type="text" name="article_2" size="50" placeholder="Article Two"><br>
-                    <input type="submit" value="OK"> 
+                    <input hidden id="article_1" type="text" name="article_1" size="65" placeholder="Article One"><br>
+                    <input hidden id="article_2" type="text" name="article_2" size="65" placeholder="Article Two"><br>
+                    <input type="submit" value="Process"> 
                 </form> 
 
                 <!-- <button type="button" onclick="processing()">Submit</button> -->
@@ -83,6 +83,9 @@
 
           article1=document.getElementById("article1").value
           article2=document.getElementById("article2").value
+
+          document.getElementById("article_1").value = article1
+          document.getElementById("article_2").value = article2
 
           document.getElementById("output").value = "Article One: " + article1 + "\n\n" + "Article Two: " + article2 + "\n\n"
 
