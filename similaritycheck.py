@@ -1,6 +1,6 @@
 import sys
 import nltk
-nltk.download(sent_tokenize)
+nltk.download('all')
 from nltk import sent_tokenize, word_tokenize, pos_tag
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import wordnet as wn
