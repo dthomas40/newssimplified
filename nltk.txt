@@ -1,4 +1,4 @@
-sent_tokenize
+data
 word_tokenize
 pos_tag
 RegexpTokenizer
