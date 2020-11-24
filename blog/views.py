@@ -46,10 +46,6 @@ def button(request):
     return render(request, 'home.html')
 
 def home(request):
-    import requests
-    data = requests.get("https://www.google.com")
-    print(data.text)
-    data=data.text
     context = {
         'posts': posts
     }
