@@ -56,7 +56,6 @@
         <div class="col-md-6">
             <div class="content-section">
                 <h3>Compare Articles</h3>
-                <button onclick="location.href='{% url 'blog-home' %}">Similarity Check</button>
                 <form action ="/external/" method="post">
                     {% csrf_token %}
                     Input text:
