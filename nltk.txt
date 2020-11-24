@@ -1,5 +1,1 @@
-data
-word_tokenize
-pos_tag
-RegexpTokenizer
-wordnet
+all-corpora
