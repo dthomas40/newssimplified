@@ -56,17 +56,19 @@
         <div class="col-md-6">
             <div class="content-section">
                 <h3>Compare Articles</h3>
-                
-                <textarea id="article1" rows="6" cols="65" placeholder="First Article"></textarea>
-                <textarea id="article2" rows="6" cols="65" placeholder="Second Article"></textarea>
+                <button onclick="location.href='{% url 'blog-home' %}">Similarity Check</button>
+                <form action ="/external/" method="post">
+                    {% csrf_token %}
+                    Input text:
+                    <textarea id="article1" rows="6" cols="65" name="article1" placeholder="First Article"></textarea>
+                    <textarea id="article1" rows="6" cols="65" name="article2" placeholder="Second Article"></textarea>
+                     {{data_external}}
+                     {{data1}}
 
-                <button type="button" onclick="processing()">Submit</button>
+                     <input type="submit" value="Similarity Check">
+                </form>
 
               </div>
-            <div class="content-section">
-                <h3>Result Output</h3>
-                <textarea id="output" rows="17" cols="65"></textarea>
-            </div>
           </div>
       </div>
     </main>
