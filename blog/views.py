@@ -58,7 +58,12 @@ def external(request):
     out = run([sys.executable,'similaritycheck.py', input1,input2], shell=False, stdout=PIPE)
     print(out)
 
-    return render(request,'blog/home.html',{'data1':out.stdout})
+    context = {
+        'posts': posts,
+        'data1': out.stdout
+    }
+
+    return render(request,'blog/home.html',context)
 
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
