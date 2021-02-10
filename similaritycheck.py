@@ -34,11 +34,9 @@ if __name__ == '__main__':
     art1words = []
     art2words = []
     similarities = []
-    #with open('article1.txt', encoding="utf8") as f:
     sentences = sent_tokenize(article1)
     for i in sentences:
         art1.append(i)
-    #with open('article2.txt', encoding="utf8") as f:
     sentences = sent_tokenize(article2)
     for i in sentences:
         art2.append(i)
@@ -107,8 +105,7 @@ if __name__ == '__main__':
         a1count += 1
 
     similarities.sort(reverse=True)
-    #with open('result_file.txt', 'w') as f:
-    #    f.write("\n".join(str(item) for item in similarities))
+
     for i in similarities:
         print(i)
     print("--- %s seconds ---" % (time.time() - start_time))
