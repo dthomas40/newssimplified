@@ -1,5 +1,6 @@
 import sys
 import nltk
+import newspaper
 
 from nltk import sent_tokenize, word_tokenize, pos_tag
 from nltk.tokenize import RegexpTokenizer
