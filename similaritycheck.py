@@ -4,11 +4,12 @@ import nltk
 from nltk import sent_tokenize, word_tokenize, pos_tag
 from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import wordnet as wn
+from newspaper import Article
 import time
 start_time = time.time()
 
-article1 = ("%s" %(sys.argv[1]))
-article2 = ("%s" %(sys.argv[2]))
+art1_url = ("%s" %(sys.argv[1]))
+art2_url = ("%s" %(sys.argv[2]))
 
 def small_tag(tag):
     if tag.startswith('N'):
@@ -34,10 +35,20 @@ if __name__ == '__main__':
     art1words = []
     art2words = []
     similarities = []
-    sentences = sent_tokenize(article1)
+
+    article1 = Article(art1_url)
+    article2 = Article(art2_url)
+    article1.download()
+    article1.parse()
+    article1.nlp()
+    article2.download()
+    article2.parse()
+    article2.nlp()
+
+    sentences = sent_tokenize(article1.text)
     for i in sentences:
         art1.append(i)
-    sentences = sent_tokenize(article2)
+    sentences = sent_tokenize(article2.text)
     for i in sentences:
         art2.append(i)
 
@@ -58,10 +69,9 @@ if __name__ == '__main__':
             i -= 1
         i += 1
 
-    for i in art1:
-        art1words.append(pos_tag(match_tokenizer.tokenize(i)))
-    for i in art2:
-        art2words.append(pos_tag(match_tokenizer.tokenize(i)))
+    [art1words.append(pos_tag(match_tokenizer.tokenize(i))) for i in art1]
+    [art2words.append(pos_tag(match_tokenizer.tokenize(i))) for i in art2]
+
     a1count = 0
 
     for i in art1words:
@@ -77,7 +87,6 @@ if __name__ == '__main__':
             if w is not None:
                 syns.append(w)
         for k in art2words:
-            #print(i, "|||||||", k)
             syns2 = []
             for l in k:
                 tag = l[1]
