@@ -59,8 +59,8 @@
                 <form action ="/external/" method="post">
                     {% csrf_token %}
                     Input text:
-                    <textarea id="article1" rows="6" cols="65" name="article1" placeholder="First Article"></textarea>
-                    <textarea id="article1" rows="6" cols="65" name="article2" placeholder="Second Article"></textarea>
+                    <textarea id="article1" rows="6" cols="65" name="article1" placeholder="Enter First Article URL"></textarea>
+                    <textarea id="article1" rows="6" cols="65" name="article2" placeholder="Enter Second Article URL"></textarea>
                     <input type="submit" value="Similarity Check">
                     <textarea id="output" rows="16" cols="65" name="output">{{ data1 }}</textarea>
 
@@ -70,17 +70,6 @@
           </div>
       </div>
     </main>
-
-    <script>
-        function processing() {
-
-          article1=document.getElementById("article1").value
-          article2=document.getElementById("article2").value
-
-          document.getElementById("output").value = "Article One: " + article1 + "\n\n" + "Article Two: " + article2 + "\n\n"
-          document.getElementById("output").value += "President Donald Trump 's ('already', 'RB') ('long-shot', 'JJ') efforts to reverse an ('apparent', 'JJ') win for President-elect Joe Biden by challenging votes in courts suffered three ('big', 'JJ') setbacks in Arizona , Michigan and Pennylvania on Friday . \n\nSensationalism Score: 0.11764705882352941 \n\nChunking Examples:  ['President', 'Donald', 'Trump'] ['President-elect', 'Joe', 'Biden']";
-        }
-    </script>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
