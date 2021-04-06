@@ -5,10 +5,11 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import wordnet as wn
 from newspaper import Article
 import time
+import requests
+from bs4 import BeautifulSoup
 start_time = time.time()
 
-art1_url = ("%s" %(sys.argv[1]))
-art2_url = ("%s" %(sys.argv[2]))
+#
 
 def small_tag(tag):
     if tag.startswith('N'):
