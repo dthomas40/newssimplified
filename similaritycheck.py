@@ -28,6 +28,7 @@ def small_tag(tag):
     return None
 
 if __name__ == '__main__':
+    # random change again
     art1 = []
     art2 = []
     # Split articles up by sentences
