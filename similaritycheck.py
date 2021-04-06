@@ -28,13 +28,35 @@ def small_tag(tag):
     return None
 
 if __name__ == '__main__':
-    # random change again
     art1 = []
     art2 = []
     # Split articles up by sentences
     art1words = []
     art2words = []
     similarities = []
+
+    page = requests.get('https://news.google.com/topstories?hl=en-US&gl=US&ceid=US%3Aen')
+    bSoup = BeautifulSoup(page.content, 'html.parser')
+    links_list = bSoup.find_all('a')
+    links = []
+    for link in links_list:
+        if 'href' in link.attrs:
+            links.append(str(link.attrs['href']) + '\n')
+
+    i = 0
+    art1_url = links[i]
+    while art1_url[:10] != './articles':
+        art1_url = links[i]
+        i += 1
+
+    art2_url = art1_url
+
+    while art1_url == art2_url or './publications' in art2_url or './topics' in art2_url or './stories' in art2_url:
+        art2_url = links[i]
+        i += 1
+
+    art1_url = 'https://news.google.com/' + art1_url[2:]
+    art2_url = 'https://news.google.com/' + art2_url[2:]
 
     article1 = Article(art1_url)
     article2 = Article(art2_url)
@@ -48,6 +70,7 @@ if __name__ == '__main__':
     sentences = sent_tokenize(article1.text)
     for i in sentences:
         art1.append(i)
+
     sentences = sent_tokenize(article2.text)
     for i in sentences:
         art2.append(i)
@@ -71,7 +94,6 @@ if __name__ == '__main__':
 
     [art1words.append(pos_tag(match_tokenizer.tokenize(i))) for i in art1]
     [art2words.append(pos_tag(match_tokenizer.tokenize(i))) for i in art2]
-
     a1count = 0
 
     for i in art1words:
@@ -114,7 +136,6 @@ if __name__ == '__main__':
         a1count += 1
 
     similarities.sort(reverse=True)
-
     for i in similarities:
         print(i)
     print("--- %s seconds ---" % (time.time() - start_time))
