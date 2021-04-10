@@ -139,7 +139,7 @@ if __name__ == '__main__':
 
     similarities.sort(reverse=True)
     for i in similarities:
-        content += i
+        content += similarities[i]
         print(i)
 
     Post.objects.create_post("Similarities", content)
