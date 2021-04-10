@@ -26,6 +26,8 @@ def external(request):
         'data1': out.stdout
     }
 
+    Post.objects.create_post("New", out.stdout)
+
     return render(request,'blog/home.html',context)
 
 def about(request):

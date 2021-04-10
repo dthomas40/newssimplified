@@ -16,5 +16,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-post = Post.objects.create_post("Pride and Prejudice","Nothing to see here")
