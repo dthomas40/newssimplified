@@ -138,6 +138,9 @@ if __name__ == '__main__':
         a1count += 1
 
     similarities.sort(reverse=True)
+
+    content = ""
+
     for i in similarities:
         content += similarities[i]
         print(i)
