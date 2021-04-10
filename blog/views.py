@@ -48,7 +48,7 @@ def button(request):
 
 def home(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     print(request.POST)
     return render(request, 'blog/home.html', context)
