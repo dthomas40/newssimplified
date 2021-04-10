@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from subprocess import run, PIPE
 import sys
+from .models import Post
 # Create your views here.
 
 posts = [
@@ -59,7 +60,7 @@ def external(request):
     print(out)
 
     context = {
-        'posts': posts,
+        'posts': Post.objects.all(),
         'data1': out.stdout
     }
 
