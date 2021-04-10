@@ -145,5 +145,5 @@ if __name__ == '__main__':
         content += similarities[i]
         print(i)
 
-    Post.objects.create_post("Similarities", content)
     print("--- %s seconds ---" % (time.time() - start_time))
+    return content
