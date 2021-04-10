@@ -139,11 +139,7 @@ if __name__ == '__main__':
 
     similarities.sort(reverse=True)
 
-    content = ""
-
     for i in similarities:
-        content += similarities[i]
         print(i)
 
     print("--- %s seconds ---" % (time.time() - start_time))
-    return content
