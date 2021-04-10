@@ -7,6 +7,7 @@ from newspaper import Article
 import time
 import requests
 from bs4 import BeautifulSoup
+from .models import Post
 start_time = time.time()
 
 #
@@ -138,5 +139,8 @@ if __name__ == '__main__':
 
     similarities.sort(reverse=True)
     for i in similarities:
+        content += i
         print(i)
+
+    Post.objects.create_post("Similarities", content)
     print("--- %s seconds ---" % (time.time() - start_time))
