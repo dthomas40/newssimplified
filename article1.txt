@@ -1,1 +1,1 @@
-Place second article here.
+{Place second article here.}
