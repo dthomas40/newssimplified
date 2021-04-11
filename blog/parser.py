@@ -87,20 +87,27 @@ def process_content(article):
     
     return processed
 
-
-# sys.stdout = open("results.txt", "w")
-# process_content()
-# raise SystemExit(0)
-# sys.stdout.close()
-
 class ProcessManager():
     def process_article(article1, article2):
-        sys.stdout = open("results.txt", "w")
-        processed = process_content(article1)
-        f = open("results.txt", "r")
-        output = f.read()
-        f.close()
 
         article = article1 + "\n" + "\n" + article2
+        tagged = nltk.pos_tag(word_tokenize(article))
+        output = ""
 
-        return nltk.pos_tag(word_tokenize(article))
+        for i in range(len(tagged)):
+            if tagged[i][1] == 'JJ':
+                output += tagged[i] + " "
+                sensationalism_score += 1
+            elif tagged[i][1] == 'RB':
+                output += tagged[i] + " "
+                sensationalism_score += 1
+            elif tagged[i][1] == 'MD':
+                output += tagged[i] + " "
+                sensationalism_score += 1
+            elif tagged[i][1] == 'PRP' or tagged[i][1] == 'PRP$':
+                output += tagged[i] + " "
+                sensationalism_score += 1
+            else:
+                output += tagged[i][0] + " "
+
+        return output
