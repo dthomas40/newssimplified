@@ -22,7 +22,9 @@ def external(request):
     input1 = request.POST.get('article1')
     input2 = request.POST.get('article2')
     out = run([sys.executable,'similaritycheck.py', input1,input2], shell=False, stdout=PIPE)
-    parser_out = parser.ProcessManager.process_article(input1)
+    article1_out = parser.ProcessManager.process_article(input1)
+    article2_out = parser.ProcessManager.process_article(input2)
+    parser_out = article1_out + "\n" + "\n" + article2_out
     print(out)
 
     context = {
@@ -31,7 +33,7 @@ def external(request):
         'data2': parser_out
     }
 
-    Post.objects.create_post(title, parser_out, genre[0])
+    Post.objects.create_post(title, parser_out, genre[0].capitalize())
 
     return render(request,'blog/home.html',context)
 
