@@ -94,12 +94,13 @@ def process_content(article):
 # sys.stdout.close()
 
 class ProcessManager():
-    def process_article(article):
+    def process_article(article1, article2):
         sys.stdout = open("results.txt", "w")
-        processed = process_content(article)
-
+        processed = process_content(article1)
         f = open("results.txt", "r")
         output = f.read()
         f.close()
+
+        article = article1 + "\n" + "\n" + article2
 
         return nltk.pos_tag(word_tokenize(article))

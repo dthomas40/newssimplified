@@ -22,9 +22,7 @@ def external(request):
     input1 = request.POST.get('article1')
     input2 = request.POST.get('article2')
     out = run([sys.executable,'similaritycheck.py', input1,input2], shell=False, stdout=PIPE)
-    article1_out = parser.ProcessManager.process_article(input1)
-    article2_out = parser.ProcessManager.process_article(input2)
-    parser_out = article1_out + "\n" + "\n" + article2_out
+    parser_out = parser.ProcessManager.process_article(input1,input2)
     print(out)
 
     context = {
