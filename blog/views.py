@@ -3,7 +3,7 @@ from django.shortcuts import render
 from subprocess import run, PIPE
 import sys
 from .models import Post
-from .parser import ProcessManager
+from . import ProcessManager
 # Create your views here.
 
 def button(request):
