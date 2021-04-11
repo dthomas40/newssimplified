@@ -9,6 +9,7 @@ def button(request):
     return render(request, 'home.html')
 
 def home(request):
+    Post.objects.all().delete()
     context = {
         'posts': Post.objects.all()
     }

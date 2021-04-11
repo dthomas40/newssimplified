@@ -9,9 +9,20 @@ class PostManager(models.Manager):
         return post
 
 class Post(models.Model):
+
+    GENRE_CHOICES = [
+        ('W', 'World'),
+        ('F', 'Finance'),
+        ('P', 'Politics'),
+        ('S', 'Science & Technology'),
+        ('H', 'Health'),
+        ('E', 'Entertainment')
+    ]
+
     title = models.CharField(max_length=100)
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
+    genre = models.CharField(max_length=1, choices=GENRE_CHOICES)
     objects = PostManager()
 
     def __str__(self):
