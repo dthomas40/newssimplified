@@ -15,8 +15,11 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 # word_tokens = word_tokenize(ARTICLE_TEXT)
 
 
-def process_content():
-    processed = ""
+def process_content(article):
+    processed = ""   
+    sentence_tokens = sent_tokenize(article)
+    word_tokens = word_tokenize(article)
+    
     try:
         tagged = nltk.pos_tag(word_tokens)
 
@@ -92,10 +95,8 @@ def process_content():
 
 class ProcessManager():
     def process_article(article):
-        sentence_tokens = sent_tokenize(article)
-        word_tokens = word_tokenize(article)
         sys.stdout = open("results.txt", "w")
-        processed = process_content()
+        processed = process_content(article)
 
         f = open("results.txt", "r")
         output = f.read()
