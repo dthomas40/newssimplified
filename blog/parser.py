@@ -94,20 +94,22 @@ class ProcessManager():
         tagged = nltk.pos_tag(word_tokenize(article))
         output = ""
 
+        
+
         for i in range(len(tagged)):
             if tagged[i][1] == 'JJ':
-                output += tagged[i] + " "
+                output += ''.join(tagged[i]) + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'RB':
-                output += tagged[i] + " "
+                output += ''.join(tagged[i]) + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'MD':
-                output += tagged[i] + " "
+                output += ''.join(tagged[i]) + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'PRP' or tagged[i][1] == 'PRP$':
-                output += tagged[i] + " "
+                output += ''.join(tagged[i]) + " "
                 sensationalism_score += 1
             else:
-                output += tagged[i][0] + " "
+                output += ''.join(tagged[i][0]) + " "
 
         return output
