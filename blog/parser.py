@@ -5,9 +5,9 @@ import nltk
 # nltk.download('averaged_perceptron_tagger')
 from nltk.tokenize import sent_tokenize, word_tokenize
 
-with open(os.path.join(sys.path[0], "article.txt"), "r") as f:
-    ARTICLE_TEXT = f.read()
-f.close()
+# with open(os.path.join(sys.path[0], "article.txt"), "r") as f:
+#     ARTICLE_TEXT = f.read()
+# f.close()
 
 # print(ARTICLE_TEXT)
 
@@ -71,7 +71,7 @@ def process_content():
         print(str(e))
 
 
-sys.stdout = open("results.txt", "w")
+# sys.stdout = open("results.txt", "w")
 # process_content()
 # raise SystemExit(0)
 # sys.stdout.close()
