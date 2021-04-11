@@ -82,4 +82,5 @@ class ProcessManager():
         word_tokens = word_tokenize(article)
         output = sys.stdout
         process_content()
+        sys.stdout.close()
         return output
