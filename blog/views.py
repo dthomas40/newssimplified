@@ -9,7 +9,6 @@ def button(request):
     return render(request, 'home.html')
 
 def home(request):
-    Post.objects.all().delete()
     context = {
         'posts': Post.objects.all()
     }
@@ -27,7 +26,7 @@ def external(request):
         'data1': out.stdout
     }
 
-    Post.objects.create_post("New", out)
+    Post.objects.create_post("New", out, 'W')
 
     return render(request,'blog/home.html',context)
 
