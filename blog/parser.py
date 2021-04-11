@@ -80,7 +80,11 @@ class ProcessManager():
     def process_article(article):
         sentence_tokens = sent_tokenize(article)
         word_tokens = word_tokenize(article)
-        output = sys.stdout
+        sys.stdout = open("results.txt", "w")
         process_content()
-        sys.stdout.close()
+
+        with open(os.path.join(sys.path[0], "results.txt"), "r") as f:
+            output = f.read()
+        f.close()
+
         return output
