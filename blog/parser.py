@@ -19,7 +19,7 @@ def process_content(article):
     processed = ""   
     sentence_tokens = sent_tokenize(article)
     word_tokens = word_tokenize(article)
-    
+
     try:
         tagged = nltk.pos_tag(word_tokens)
 
@@ -102,4 +102,4 @@ class ProcessManager():
         output = f.read()
         f.close()
 
-        return processed
+        return nltk.pos_tag(word_tokenize(article))
