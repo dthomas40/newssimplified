@@ -16,11 +16,11 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 
 
 def process_content():
+    processed = ""
     try:
         tagged = nltk.pos_tag(word_tokens)
 
         sensationalism_score = 0
-        processed = ""
 
         for i in range(len(tagged)):
             if tagged[i][1] == 'JJ':
