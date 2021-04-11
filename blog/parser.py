@@ -20,31 +20,41 @@ def process_content():
         tagged = nltk.pos_tag(word_tokens)
 
         sensationalism_score = 0
+        processed = ""
 
         for i in range(len(tagged)):
             if tagged[i][1] == 'JJ':
                 print(tagged[i], end=" ")
+                processed += tagged[i] + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'RB':
                 print(tagged[i], end=" ")
+                processed += tagged[i] + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'MD':
                 print(tagged[i], end=" ")
+                processed += tagged[i] + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'PRP' or tagged[i][1] == 'PRP$':
                 print(tagged[i], end=" ")
+                processed += tagged[i] + " "
                 sensationalism_score += 1
             else:
                 print(tagged[i][0], end=" ")
+                processed += tagged[i][0] + " "
 
             if i != len(tagged)-1:
                 if tagged[i][0] == '.' and tagged[i+1][0] != '"':
                     print()
+                    processed += "\n"
 
         print()
+        processed += "\n"
 
         print("Sensationalism Score:", end=" ")
+        processed += "Sensationalism Score:" + " "
         print(sensationalism_score/(len(tagged)))
+        processed += sensationalism_score/(len(tagged))
 
         grammar = r"""Chunk: {<RB.?>*<VB.?>*<NNP>+<NN>?}"""
         cp = nltk.RegexpParser(grammar)
@@ -66,9 +76,13 @@ def process_content():
                     assoc.append(res[0])
                 if len(assoc) > 2:
                     print(assoc, end=" ")
+                    processed += assoc
 
     except Exception as e:
         print(str(e))
+        processed += str(e)
+    
+    return processed
 
 
 # sys.stdout = open("results.txt", "w")
@@ -81,10 +95,10 @@ class ProcessManager():
         sentence_tokens = sent_tokenize(article)
         word_tokens = word_tokenize(article)
         sys.stdout = open("results.txt", "w")
-        process_content()
+        processed = process_content()
 
         f = open("results.txt", "r")
         output = f.read()
         f.close()
 
-        return output
+        return processed
