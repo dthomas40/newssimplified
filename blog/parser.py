@@ -83,8 +83,8 @@ class ProcessManager():
         sys.stdout = open("results.txt", "w")
         process_content()
 
-        with open(os.path.join(sys.path[0], "results.txt"), "r") as f:
-            output = f.read()
+        f = open("results.txt", "r")
+        output = f.read()
         f.close()
 
         return output
