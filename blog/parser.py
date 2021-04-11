@@ -11,8 +11,8 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 
 # print(ARTICLE_TEXT)
 
-sentence_tokens = sent_tokenize(ARTICLE_TEXT)
-word_tokens = word_tokenize(ARTICLE_TEXT)
+# sentence_tokens = sent_tokenize(ARTICLE_TEXT)
+# word_tokens = word_tokenize(ARTICLE_TEXT)
 
 
 def process_content():
