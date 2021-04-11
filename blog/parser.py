@@ -93,7 +93,7 @@ class ProcessManager():
         article = article1 + "\n" + "\n" + article2
         tagged = nltk.pos_tag(word_tokenize(article))
         output = ""
-
+        sensationalism_score = 0
         
 
         for i in range(len(tagged)):
