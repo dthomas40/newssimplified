@@ -14,16 +14,16 @@ class ProcessManager():
 
         for i in range(len(tagged)):
             if tagged[i][1] == 'JJ':
-                output += "{" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + "} "
+                output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
                 sensationalism_score += 1
             elif tagged[i][1] == 'RB':
-                output += "{" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + "} "
+                output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
                 sensationalism_score += 1
             elif tagged[i][1] == 'MD':
-                output += "{" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + "} "
+                output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
                 sensationalism_score += 1
             elif tagged[i][1] == 'PRP' or tagged[i][1] == 'PRP$':
-                output += "{" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + "} "
+                output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
                 sensationalism_score += 1
             else:
                 output += ''.join(tagged[i][0]) + " "
