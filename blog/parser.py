@@ -111,4 +111,21 @@ class ProcessManager():
             else:
                 output += ''.join(tagged[i][0]) + " "
 
+        output += "\nSensationalism Score:" + " "
+        output += sensationalism_score/(len(tagged))
+
+        output += "\nChunking Examples:" + " "
+
+        grammar = r"""Chunk: {<RB.?>*<VB.?>*<NNP>+<NN>?}"""
+        cp = nltk.RegexpParser(grammar)
+        results = cp.parse(tagged)
+        
+        for result in results:
+            if type(result) == nltk.tree.Tree:
+                assoc=[]
+                for res in result:
+                    assoc.append(res[0])
+                if len(assoc) > 2:
+                    output += ''.join(assoc) + " "
+
         return output + "\n\n"
