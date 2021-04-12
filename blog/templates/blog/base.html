@@ -54,14 +54,14 @@
                 <form action ="/external/" method="post">
                     {% csrf_token %}
                     <br/>
-                    <textarea id="genre" rows="1" cols="44" name="genre" placeholder="Enter Genre"></textarea>
-                    <textarea id="title" rows="1" cols="44" name="title" placeholder="Enter Title"></textarea>
-                    <textarea id="article1" rows="2" cols="44" name="article1" placeholder="Enter First Article"></textarea>
-                    <textarea id="article1" rows="2" cols="44" name="article2" placeholder="Enter Second Article"></textarea>
+                    <textarea id="genre" rows="1" cols="42" name="genre" placeholder="Enter Genre"></textarea>
+                    <textarea id="title" rows="1" cols="42" name="title" placeholder="Enter Title"></textarea>
+                    <textarea id="article1" rows="2" cols="42" name="article1" placeholder="Enter First Article"></textarea>
+                    <textarea id="article1" rows="2" cols="42" name="article2" placeholder="Enter Second Article"></textarea>
                     <input type="submit" value="Process Articles">
 
                 </form>
-                <textarea id="output" rows="4" cols="88" name="output">{{ data2 }}</textarea>
+                <textarea id="output" rows="4" cols="90" name="output">{{ data2 }}</textarea>
 
               </div>
           </div>
