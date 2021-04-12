@@ -112,4 +112,4 @@ class ProcessManager():
             else:
                 output += ''.join(tagged[i][0]) + " "
 
-        return output
+        return output + "\n\n"
