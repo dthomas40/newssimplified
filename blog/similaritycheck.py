@@ -226,6 +226,6 @@ class ComparisonManager():
             output = ""
 
             for i in similarities:
-                output += "".join(i) + " "
+                output += str(i[0]) + " " + "".join(i[1]) + " " + "".join(i[2]) + " "
 
             return output + "\n\n"
