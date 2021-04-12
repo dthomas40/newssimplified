@@ -112,7 +112,7 @@ class ProcessManager():
                 output += ''.join(tagged[i][0]) + " "
 
         output += "\nSensationalism Score:" + " "
-        output += sensationalism_score/(len(tagged))
+        output += str(sensationalism_score/(len(tagged)))
 
         output += "\nChunking Examples:" + " "
 
