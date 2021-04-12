@@ -56,20 +56,17 @@
                     <br/>
                     <textarea id="genre" rows="1" cols="15" name="genre" placeholder="Enter Genre"></textarea>
                     <textarea id="title" rows="1" cols="15" name="title" placeholder="Enter Title"></textarea>
-                    <textarea id="article1" rows="6" cols="30" name="article1" placeholder="Enter First Article"></textarea>
-                    <textarea id="article1" rows="6" cols="30" name="article2" placeholder="Enter Second Article"></textarea>
+                    <textarea id="article1" rows="3" cols="30" name="article1" placeholder="Enter First Article"></textarea>
+                    <textarea id="article1" rows="3" cols="30" name="article2" placeholder="Enter Second Article"></textarea>
                     <input type="submit" value="Process Articles">
 
                 </form>
 
+                <h3>Result</h3>
+                <br/>
+                <textarea id="output" rows="5" cols="65" name="output">{{ data2 }}</textarea>
+
               </div>
-          </div>
-          <div class="col-md-6">
-            <div>
-              <h3>Result</h3>
-              <br/>
-              <textarea id="output" rows="9" cols="65" name="output">{{ data2 }}</textarea>
-            </div>
           </div>
           <div class="col-md-8">
             <div>
