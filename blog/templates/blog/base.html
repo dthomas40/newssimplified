@@ -67,14 +67,16 @@
           <div class="col-md-6">
             <div>
               <h3>Result:</h3>
-              <textarea id="output" rows="16" cols="65" name="output">{{ data2 }}</textarea>
+              <textarea id="output" rows="8" cols="65" name="output">{{ data2 }}</textarea>
             </div>
           </div>
-          <div class="col-md-8">
-            <div>
-              {% block content %}{% endblock %}
+          <centered>
+            <div class="col-md-8">
+              <div>
+                {% block content %}{% endblock %}
+              </div>
             </div>
-          </div>
+          </centered>
       </div>
     </main>
 
