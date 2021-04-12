@@ -216,7 +216,7 @@ class ComparisonManager():
                                 score += x
                                 count += 1
                             score /= count
-                    sentence_similarity = (score, art1[a1count], art2[a2count])
+                    sentence_similarity = (round(score,3), art1[a1count], art2[a2count])
                     similarities.append(sentence_similarity)
                     a2count += 1
                 a1count += 1
@@ -227,5 +227,6 @@ class ComparisonManager():
 
             for i in similarities:
                 output += "[(" + str(i[0]) + ") (" + "".join(i[1]) + ") (" + "".join(i[2]) + ")]\n"
-
+                if i[0] < 0.01:
+                    break
             return output + "\n\n"
