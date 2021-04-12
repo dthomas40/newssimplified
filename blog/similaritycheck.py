@@ -221,4 +221,4 @@ class ComparisonManager():
             for i in similarities:
                 output += "".join(i) + " "
 
-        return output + "\n\n"
+            return output + "\n\n"
