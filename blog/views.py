@@ -4,6 +4,7 @@ from subprocess import run, PIPE
 import sys
 from .models import Post
 from . import parser
+from . import similaritycheck
 # Create your views here.
 
 def button(request):
@@ -23,9 +24,8 @@ def external(request):
     input2 = request.POST.get('article2')
     parser_out = parser.ProcessManager.process_article(input1)
     parser_out += parser.ProcessManager.process_article(input2)
+    parser_out += similaritycheck.ComparisonManager.compare_articles(input1,input2)
 
-    out = run([sys.executable,'similaritycheck.py', input1,input2], shell=False, stdout=PIPE)
-    print(out)
 
     context = {
         'posts': Post.objects.all(),
