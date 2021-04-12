@@ -29,7 +29,6 @@ def external(request):
 
     context = {
         'posts': Post.objects.all(),
-        'data1': out.stdout,
         'data2': parser_out
     }
 
