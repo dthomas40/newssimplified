@@ -48,23 +48,20 @@
     </header>
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="content-section">
                 <h3>Process Articles</h3>
                 <form action ="/external/" method="post">
                     {% csrf_token %}
                     <br/>
-                    <textarea id="genre" rows="1" cols="15" name="genre" placeholder="Enter Genre"></textarea>
-                    <textarea id="title" rows="1" cols="15" name="title" placeholder="Enter Title"></textarea>
-                    <textarea id="article1" rows="3" cols="30" name="article1" placeholder="Enter First Article"></textarea>
-                    <textarea id="article1" rows="3" cols="30" name="article2" placeholder="Enter Second Article"></textarea>
+                    <textarea id="genre" rows="1" cols="50" name="genre" placeholder="Enter Genre"></textarea>
+                    <textarea id="title" rows="1" cols="50" name="title" placeholder="Enter Title"></textarea>
+                    <textarea id="article1" rows="2" cols="50" name="article1" placeholder="Enter First Article"></textarea>
+                    <textarea id="article1" rows="2" cols="50" name="article2" placeholder="Enter Second Article"></textarea>
                     <input type="submit" value="Process Articles">
 
                 </form>
-
-                <h3>Result</h3>
-                <br/>
-                <textarea id="output" rows="5" cols="65" name="output">{{ data2 }}</textarea>
+                <textarea id="output" rows="4" cols="105" name="output">{{ data2 }}</textarea>
 
               </div>
           </div>
