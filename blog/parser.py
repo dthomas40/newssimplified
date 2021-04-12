@@ -88,9 +88,8 @@ def process_content(article):
     return processed
 
 class ProcessManager():
-    def process_article(article1, article2):
+    def process_article(article):
 
-        article = article1 + "\n" + "\n" + article2
         tagged = nltk.pos_tag(word_tokenize(article))
         output = ""
         sensationalism_score = 0

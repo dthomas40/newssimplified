@@ -21,7 +21,8 @@ def external(request):
     title = request.POST.get('title')
     input1 = request.POST.get('article1')
     input2 = request.POST.get('article2')
-    parser_out = parser.ProcessManager.process_article(input1,input2)
+    parser_out = parser.ProcessManager.process_article(input1)
+    parser_out += parser.ProcessManager.process_article(input2)
 
     out = run([sys.executable,'similaritycheck.py', input1,input2], shell=False, stdout=PIPE)
     print(out)
