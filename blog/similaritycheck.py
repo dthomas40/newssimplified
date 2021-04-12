@@ -146,6 +146,13 @@ if __name__ == '__main__':
 
 class ComparisonManager():
     def compare_articles(article1,article2):
+            art1 = []
+            art2 = []
+            # Split articles up by sentences
+            art1words = []
+            art2words = []
+            similarities = []
+
             sentences = sent_tokenize(article1)
             for i in sentences:
                 art1.append(i)
