@@ -48,8 +48,8 @@
     </header>
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-6">
-            <div class="content-section">
+        <div class="content-section">
+          <div class="col-md-6">
                 <h3>Process Articles</h3>
                 <form action ="/external/" method="post">
                     {% csrf_token %}
@@ -61,18 +61,15 @@
                     <input type="submit" value="Process Articles">
 
                 </form>
-
-              </div>
           </div>
           <div class="col-md-6">
-            <div class="content-section">
-              <div>
-                <h3>Result</h3>
-                <br/>
-                <textarea id="output" rows="9" cols="65" name="output">{{ data2 }}</textarea>
-              </div>
+            <div>
+              <h3>Result</h3>
+              <br/>
+              <textarea id="output" rows="9" cols="65" name="output">{{ data2 }}</textarea>
             </div>
           </div>
+        </div>
           <div class="col-md-8">
             <div>
               {% block content %}{% endblock %}
