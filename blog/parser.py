@@ -29,7 +29,11 @@ class ProcessManager():
                 output += ''.join(tagged[i][0]) + " "
 
         output += "\nSensationalism Score:" + " "
-        output += str(sensationalism_score/(len(tagged)))
+        
+        if(len(tagged) != 0):
+            output += str(sensationalism_score/(len(tagged)))
+        else:
+            output += "NULL"
 
         output += "\nChunking Examples:" + " "
 
