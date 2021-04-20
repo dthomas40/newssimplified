@@ -42,4 +42,4 @@ class Scraper():
         article2.parse()
         article2.nlp()
 
-        return (article1,article2)
+        return (article1.text,article2.text)
