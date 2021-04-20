@@ -21,7 +21,7 @@ def home(request):
 
     parser_out = output.Formatter.format(process1, process2, process3)
 
-    title = "Automation Debugging: Test Run"
+    title = "Automation Debugging: New Test Run"
     genre = "World"
 
     Post.objects.create_post(title, parser_out, genre[0].capitalize())
