@@ -10,9 +10,6 @@ from . import automate
 # Create your views here.
 
 def button(request):
-    return render(request, 'home.html')
-
-def home(request):
     (input1,input2) = automate.Scraper.scrape()
 
     process1 = parser.ProcessManager.process_article(input1)
@@ -28,8 +25,15 @@ def home(request):
 
     context = {
         'posts': Post.objects.all(),
-        'article1':input1,
-        'article2':input2
+        'article1': input1,
+        'article2': input2
+    }
+
+    return render(request, 'home.html', context)
+
+def home(request):
+    context = {
+        'posts': Post.objects.all()
     }
     print(request.POST)
 
