@@ -228,6 +228,6 @@ class ComparisonManager():
             for i in similarities:
                 output += "[(" + str(i[0]) + ") (" + "".join(i[1]) + ") (" + "".join(i[2]) + ")]\n"
                 outputnum += 1
-                if outputnum<20:
+                if outputnum>20:
                     break
             return output + "\n\n"
