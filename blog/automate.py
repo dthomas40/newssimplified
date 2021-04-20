@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 class Scraper():
     def scrape():
-        page = requests.get('https://news.google.com/topstories?hl=en-US&gl=US&ceid=US%3Aen')
+        page = requests.get('https://news.google.com/topstories?hl=en-US&gl=US&ceid=US%3Aen%27)
         bSoup = BeautifulSoup(page.content, 'html.parser')
         links_list = bSoup.find_all('a')
         links = []
@@ -33,11 +33,10 @@ class Scraper():
         art2_url = 'https://news.google.com/' + art2_url[2:]
 
         article1 = Article(art1_url)
+        article2 = Article(art2_url)
         article1.download()
         article1.parse()
         article1.nlp()
-
-        article2 = Article(art2_url)
         article2.download()
         article2.parse()
         article2.nlp()
