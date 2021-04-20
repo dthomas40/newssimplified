@@ -18,7 +18,15 @@ def home(request):
     }
     print(request.POST)
 
-    automate.Scraper.scrape()
+    (input1,input2) = automate.Scraper.scrape()
+
+    process1 = parser.ProcessManager.process_article(input1)
+    process2 = parser.ProcessManager.process_article(input2)
+    process3 = similaritycheck.ComparisonManager.compare_articles(input1,input2)
+
+    parser_out = output.Formatter.format(process1, process2, process3)
+
+    Post.objects.create_post(title, parser_out, genre[0].capitalize())
 
     return render(request, 'blog/home.html', context)
 
