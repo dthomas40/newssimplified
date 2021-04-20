@@ -5,6 +5,7 @@ import sys
 from .models import Post
 from . import parser
 from . import similaritycheck
+from . import output
 # Create your views here.
 
 def button(request):
@@ -22,10 +23,12 @@ def external(request):
     title = request.POST.get('title')
     input1 = request.POST.get('article1')
     input2 = request.POST.get('article2')
-    parser_out = parser.ProcessManager.process_article(input1)
-    parser_out += parser.ProcessManager.process_article(input2)
-    parser_out += similaritycheck.ComparisonManager.compare_articles(input1,input2)
 
+    process1 = parser.ProcessManager.process_article(input1)
+    process2 = parser.ProcessManager.process_article(input2)
+    process3 = similaritycheck.ComparisonManager.compare_articles(input1,input2)
+
+    parser_out = output.Formatter.format(process1, process2, process3)
 
     context = {
         'posts': Post.objects.all(),
