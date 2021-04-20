@@ -18,7 +18,7 @@ def home(request):
     }
     print(request.POST)
 
-    automate.Scraper.find_link()
+    automate.Scraper.scrape()
 
     return render(request, 'blog/home.html', context)
 
