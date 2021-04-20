@@ -224,9 +224,9 @@ class ComparisonManager():
             similarities.sort(reverse=True)
 
             output = ""
-
+            outputnum= 0
             for i in similarities:
                 output += "[(" + str(i[0]) + ") (" + "".join(i[1]) + ") (" + "".join(i[2]) + ")]\n"
-                if i[0] < 0.01:
+                if outputnum<20:
                     break
             return output + "\n\n"
