@@ -1,3 +1,11 @@
+import sys
+import nltk
+from nltk import sent_tokenize, word_tokenize, pos_tag
+from nltk.tokenize import RegexpTokenizer
+from nltk.corpus import wordnet as wn
+from newspaper import Article
+import requests
+from bs4 import BeautifulSoup
 
 class Scraper():
     def find_link():
