@@ -24,9 +24,7 @@ def button(request):
     Post.objects.create_post(title, parser_out, genre[0].capitalize())
 
     context = {
-        'posts': Post.objects.all(),
-        'article1': input1,
-        'article2': input2
+        'posts': Post.objects.all()
     }
 
     return render(request, 'home.html', context)
@@ -53,7 +51,7 @@ def external(request):
 
     context = {
         'posts': Post.objects.all(),
-        'data2': parser_out
+        # 'data2': parser_out
     }
 
     Post.objects.create_post(title, parser_out, genre[0].capitalize())
