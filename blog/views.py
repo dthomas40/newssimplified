@@ -44,8 +44,8 @@ def home(request):
 def external(request):
     genre = request.POST.get('genre')
     title = request.POST.get('title')
-    input1 = article1
-    input2 = article2
+    input1 = request.POST.get('article1')
+    input2 = request.POST.get('article2')
 
     process1 = parser.ProcessManager.process_article(input1)
     process2 = parser.ProcessManager.process_article(input2)
