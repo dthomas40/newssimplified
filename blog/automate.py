@@ -38,7 +38,7 @@ class Scraper():
         article1.download()
         article1.parse()
         article1.nlp()
-        time.sleep(10)
+        time.sleep(100)
 
         article2.download()
         article2.parse()
