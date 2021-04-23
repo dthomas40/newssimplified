@@ -132,9 +132,10 @@
                 </form>
                 <br/>
                 <small>If you wish to update the posts with the latest topic from google news click the button below:</small>
-                <br/>
+                
                 <form action ="/button/" method="post">
                   {% csrf_token %}
+                  <br/>
                   <!-- <textarea id="genre" rows="1" cols="15" name="genre" placeholder="Enter Genre"></textarea>
                   <textarea id="title" rows="1" cols="15" name="title" placeholder="Enter Title"></textarea> -->
                   <input type="submit" value="Update Articles" class="button" style="vertical-align:middle">
