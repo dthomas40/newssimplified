@@ -46,4 +46,4 @@ class Scraper():
                 art2_url = links[i]
                 i += 1
 
-        return (article1.text,article2.text)
+        return return (article1.title + " vs " + article2.title, article1.authors, article2.authors, article1.text, article2.text, art1_url, art2_url)

@@ -10,7 +10,7 @@ from . import automate
 # Create your views here.
 
 def button(request):
-    (input1,input2) = automate.Scraper.scrape()
+    (title,author1,author2,input1,input2,url1,url2) = automate.Scraper.scrape()
 
     process1 = parser.ProcessManager.process_article(input1)
     process2 = parser.ProcessManager.process_article(input2)
@@ -18,12 +18,12 @@ def button(request):
 
     parser_out = output.Formatter.format(process1, process2, process3)
 
-    title = "Automation Debugging: Newer Test Run"
-    genre = "World"
-    author1 = "Unknown"
-    author2 = "Unknown"
-    url1 = "www.google.com"
-    url2 = "www.google.com"
+    # title = "Automation Debugging: Newer Test Run"
+    # genre = "World"
+    # author1 = "Unknown"
+    # author2 = "Unknown"
+    # url1 = "www.google.com"
+    # url2 = "www.google.com"
 
     Post.objects.create_post(title, parser_out, genre[0].capitalize(), author1, author2, url1, url2)
 
