@@ -19,7 +19,7 @@ def button(request):
     parser_out = output.Formatter.format(process1, process2, process3)
 
     # title = "Automation Debugging: Newer Test Run"
-    # genre = "World"
+    genre = "World"
     # author1 = "Unknown"
     # author2 = "Unknown"
     # url1 = "www.google.com"
