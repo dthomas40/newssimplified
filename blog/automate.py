@@ -35,18 +35,17 @@ class Scraper():
 
         article1 = Article(art1_url)
         article2 = Article(art2_url)
-        article1.download()
-        article1.parse()
-        article1.nlp()
-        time.sleep(100)
-
-        article2.download()
-        article2.parse()
-        article2.nlp()
 
         while article2.text == "":
             while art1_url == art2_url or './publications' in art2_url or './topics' in art2_url or './stories' in art2_url:
                 art2_url = links[i]
                 i += 1
+
+        article1.download()
+        article1.parse()
+        article1.nlp()
+        article2.download()
+        article2.parse()
+        article2.nlp()
 
         return (article1.title + " vs " + article2.title, article1.authors, article2.authors, article1.text, article2.text, art1_url, art2_url)
