@@ -20,8 +20,12 @@ def button(request):
 
     title = "Automation Debugging: Newer Test Run"
     genre = "World"
+    author1 = "Unknown"
+    author2 = "Unknown"
+    url1 = "www.google.com"
+    url2 = "www.google.com"
 
-    Post.objects.create_post(title, parser_out, genre[0].capitalize())
+    Post.objects.create_post(title, parser_out, genre[0].capitalize(), author1, author2, url1, url2)
 
     context = {
         'posts': Post.objects.all()
@@ -54,7 +58,7 @@ def external(request):
         # 'data2': parser_out
     }
 
-    Post.objects.create_post(title, parser_out, genre[0].capitalize())
+    Post.objects.create_post(title, parser_out, genre[0].capitalize(), "Unknown", "Unknown", "www.google.com", "www.google.com")
 
     return render(request,'blog/home.html',context)
 
