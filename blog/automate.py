@@ -6,7 +6,6 @@ from nltk.corpus import wordnet as wn
 from newspaper import Article
 import requests
 from bs4 import BeautifulSoup
-import time
 
 class Scraper():
     def scrape():
