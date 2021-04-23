@@ -7,7 +7,8 @@
               <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
             </div>
             <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-            <small class="text-muted"><a class="article-title" href="#">{{ post.get_genre_display }}</a></small><br/><br/>
+            <small class="text-muted"><a class="article-title" href="#">{{ post.get_genre_display }}</a></small>
+            <small class="text-muted"><a class="article-title" href="#"> {{ post.author1 }} vs {{ post.author2 }}</a></small><br/>
             <textarea readonly rows="10" cols="90">{{ post.content }}</textarea>
           </div>
         </article>
