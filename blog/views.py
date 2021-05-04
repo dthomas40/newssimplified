@@ -56,6 +56,14 @@ def home(request):
 
     return render(request, 'blog/home.html', context)
 
+def world(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    print(request.POST)
+
+    return render(request, 'blog/world.html', context)
+
 def external(request):
     genre = request.POST.get('genre')
     title = request.POST.get('title')
