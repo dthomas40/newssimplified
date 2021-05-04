@@ -14,16 +14,20 @@ class ProcessManager():
 
         for i in range(len(tagged)):
             if tagged[i][1] == 'JJ':
-                output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
+                # output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
+                output += ''.join(tagged[i][0]) + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'RB':
-                output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
+                # output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
+                output += ''.join(tagged[i][0]) + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'MD':
-                output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
+                # output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
+                output += ''.join(tagged[i][0]) + " "
                 sensationalism_score += 1
             elif tagged[i][1] == 'PRP' or tagged[i][1] == 'PRP$':
-                output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
+                # output += "(" + ''.join(tagged[i][1]) + ", " + ''.join(tagged[i][0]) + ") "
+                output += ''.join(tagged[i][0]) + " "
                 sensationalism_score += 1
             else:
                 output += ''.join(tagged[i][0]) + " "
@@ -35,7 +39,7 @@ class ProcessManager():
         else:
             output += "NULL"
 
-        output += "\nChunking Examples:" + " "
+        output += "\nImportant Terms:" + " "
 
         grammar = r"""Chunk: {<RB.?>*<VB.?>*<NNP>+<NN>?}"""
         cp = nltk.RegexpParser(grammar)
@@ -45,8 +49,8 @@ class ProcessManager():
             if type(result) == nltk.tree.Tree:
                 assoc=[]
                 for res in result:
-                    assoc.append(res[0])
+                    assoc.append(res[0]+" ")
                 if len(assoc) > 2:
-                    output += ''.join(assoc) + " "
+                    output += ''.join(assoc) + ", "
 
         return output + "\n\n"
