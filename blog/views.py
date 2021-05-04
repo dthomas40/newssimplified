@@ -64,6 +64,46 @@ def world(request):
 
     return render(request, 'blog/world.html', context)
 
+def finance(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    print(request.POST)
+
+    return render(request, 'blog/finance.html', context)
+
+def politics(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    print(request.POST)
+
+    return render(request, 'blog/politics.html', context)
+
+def science(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    print(request.POST)
+
+    return render(request, 'blog/science.html', context)
+
+def health(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    print(request.POST)
+
+    return render(request, 'blog/health.html', context)
+
+def entertainment(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    print(request.POST)
+
+    return render(request, 'blog/entertainment.html', context)
+
 def external(request):
     genre = request.POST.get('genre')
     title = request.POST.get('title')
