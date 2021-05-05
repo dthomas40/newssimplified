@@ -3,16 +3,18 @@
     {% for post in posts reversed %}
         {% if post.genre == 'S' %}
             <article class="media content-section">
-            <div>
-                <div class="article-metadata">
-                <small style="font-family: 'Times New Roman', Times, serif;" class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                <div>
+                    <div class="article-metadata">
+                    <small style="font-family: 'Times New Roman', Times, serif;" class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+                    </div>
+                    <h3 style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.title }}</a></h3>
+                    <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.get_genre_display }}</a></small><br/>
+                    <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="{{ post.url1 }}" target="_blank" rel="noopener noreferrer">{{ post.url1 }}</a></small><br/>
+                    <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="{{ post.url2 }}" target="_blank" rel="noopener noreferrer">{{ post.url2 }}</a></small><br/>
+                    <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.author1 }}</a></small><small> vs</small>
+                    <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#"> {{ post.author2 }}</a></small><br/>
+                    <textarea readonly rows="10" cols="100" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: white; font-size: small;">{{ post.content }}</textarea>
                 </div>
-                <h3 style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.title }}</a></h3>
-                <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.get_genre_display }}</a></small><br/>
-                <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.author1 }}</a></small><small> vs</small>
-                <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#"> {{ post.author2 }}</a></small><br/>
-                <textarea readonly rows="10" cols="100" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: white; font-size: small;">{{ post.content }}</textarea>
-            </div>
             </article>
         {% endif %}
     {% endfor %}
