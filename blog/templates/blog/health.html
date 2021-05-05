@@ -2,8 +2,8 @@
 {% block content %}
     {% for post in posts reversed %}
         {% if post.genre == 'H' %}
-            <article class="media content-section">
-            <div class="media-body">
+            <article>
+            <div>
                 <div class="article-metadata">
                 <small style="font-family: 'Times New Roman', Times, serif;" class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
                 </div>
