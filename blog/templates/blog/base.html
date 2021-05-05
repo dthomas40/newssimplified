@@ -25,7 +25,7 @@
         height: 150px;
         padding: 12px 20px;
         box-sizing: border-box;
-        border: 2px solid #ccc;
+        border: 1px solid #ccc;
         border-radius: 4px;
         background-color: #f8f8f8;
         resize: none;
@@ -33,11 +33,12 @@
 
       input[type=text], select {
         width: 100%;
-        padding: 12px 20px;
+        padding: 2px 20px;
         margin: 8px 0;
         display: inline-block;
         border: 1px solid #ccc;
         border-radius: 4px;
+        background-color: #f8f8f8;
         box-sizing: border-box;
       }
 
@@ -144,8 +145,7 @@
                 <form action ="/external/" method="post">
                     {% csrf_token %}
                     <br/>
-                    <!-- <textarea id="genre" rows="1" cols="20" name="genre" placeholder="Enter Genre" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: gray; font-size: small;"></textarea> -->
-                    <select id="genre">
+                    <select id="genre" name="genre">
                       <option value="W">World</option>
                       <option value="F">Finance</option>
                       <option value="P">Politics</option>
@@ -153,13 +153,14 @@
                       <option value="H">Health</option>
                       <option value="E">Entertainment</option>
                     </select>
-                    <input type="text" id="title" placeholder="Enter Title">
-                    <!-- <textarea id="title" rows="1" cols="20" name="title" placeholder="Enter Title" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: gray; font-size: small;"></textarea> -->
+                    <input type="text" id="title" name="title" placeholder="Enter Title">
+                    <input type="text" id="author1" name="author1" placeholder="Author 1">
+                    <input type="text" id="author2" name="author2" placeholder="Author 2">
+                    <input type="text" id="url1" name="url1" placeholder="URL to Article 1">
+                    <input type="text" id="url2" name="url2" placeholder="URL to Article 2">
                     <textarea id="article1" rows="6" cols="42" name="article1" placeholder="Enter First Article" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: gray; font-size: small;"></textarea>
                     <textarea id="article2" rows="6" cols="42" name="article2" placeholder="Enter Second Article" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: gray; font-size: small;"></textarea>
                     <input type="submit" value="Process Articles" class="button" style="font-family: 'Times New Roman', Times, serif; vertical-align:middle">
-                    <!-- <textarea id="output" rows="16" cols="65" name="output">{{ data2 }}</textarea> -->
-
                 </form>
                 <br/>
                 <small style="font-family: 'Times New Roman', Times, serif;">If you wish to update the posts with the latest topic from google news click the button below:</small>

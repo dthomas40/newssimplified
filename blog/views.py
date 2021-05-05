@@ -107,6 +107,10 @@ def entertainment(request):
 def external(request):
     genre = request.POST.get('genre')
     title = request.POST.get('title')
+    author1 = request.POST.get('author1')
+    author2 = request.POST.get('author2')
+    url1 = request.POST.get('url1')
+    url2 = request.POST.get('url2')
     input1 = request.POST.get('article1')
     input2 = request.POST.get('article2')
 
@@ -118,10 +122,9 @@ def external(request):
 
     context = {
         'posts': Post.objects.all(),
-        # 'data2': parser_out
     }
 
-    Post.objects.create_post(title, parser_out, genre[0].capitalize(), "Unknown", "Unknown", "www.google.com", "www.google.com")
+    Post.objects.create_post(title, parser_out, genre[0].capitalize(), author1, author2, url1, url2)
 
     return render(request,'blog/home.html',context)
 
