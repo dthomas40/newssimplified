@@ -24,6 +24,10 @@ def button(request):
     # author2 = "Unknown"
     # url1 = "www.google.com"
     # url2 = "www.google.com"
+
+    author1 += "Unknown"
+    author2 += "Unknown"
+
     author1 = author1[0]
     author2 = author2[0]
 
