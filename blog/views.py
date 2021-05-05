@@ -24,15 +24,17 @@ def button(request):
     # author2 = "Unknown"
     # url1 = "www.google.com"
     # url2 = "www.google.com"
+    author1 = author1[0]
+    author2 = author2[0]
 
     if len(title)>99:
         title = title[:96]+'...'
 
     if len(author1)>99:
-        author1 = author1[0][:96]+'...'
+        author1 = author1[:96]+'...'
 
     if len(author2)>99:
-        author2 = author2[0][:96]+'...'
+        author2 = author2[:96]+'...'
 
     if len(url1)>99:
         url1 = url1[:96]+'...'
