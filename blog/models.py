@@ -20,10 +20,10 @@ class Post(models.Model):
     ]
 
     title = models.CharField(max_length=100)
-    author1 = models.CharField(max_length=100)
-    author2 = models.CharField(max_length=100)
-    url1 = models.CharField(max_length=400)
-    url2 = models.CharField(max_length=400)
+    author1 = models.CharField(max_length=100, default="Unknown")
+    author2 = models.CharField(max_length=100, default="Unknown")
+    url1 = models.CharField(max_length=400, default="https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
+    url2 = models.CharField(max_length=400, default="https://news.google.com/topstories?hl=en-US&gl=US&ceid=US:en")
     content = models.TextField()
     date_posted = models.DateTimeField(default=timezone.now)
     genre = models.CharField(max_length=1, choices=GENRE_CHOICES, default='W')
