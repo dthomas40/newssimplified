@@ -8,6 +8,8 @@
             </div>
             <h3 style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.title }}</a></h3>
             <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.get_genre_display }}</a></small><br/>
+            <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.url1 }}</a></small><br/>
+            <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.url2 }}</a></small><br/>
             <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#">{{ post.author1 }}</a></small><small> vs</small>
             <small class="text-muted" style="font-family: 'Times New Roman', Times, serif;"><a class="article-title" href="#"> {{ post.author2 }}</a></small><br/>
             <textarea readonly rows="10" cols="100" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: white; font-size: small;">{{ post.content }}</textarea>
