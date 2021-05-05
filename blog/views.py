@@ -36,11 +36,11 @@ def button(request):
     if len(author2)>99:
         author2 = author2[:96]+'...'
 
-    if len(url1)>99:
-        url1 = url1[:96]+'...'
+    if len(url1)>399:
+        url1 = url1[:396]+'...'
 
-    if len(url2)>99:
-        url2 = url2[:96]+'...'
+    if len(url2)>399:
+        url2 = url2[:396]+'...'
 
     Post.objects.create_post(title, parser_out, genre[0].capitalize(), author1, author2, url1, url2)
 
