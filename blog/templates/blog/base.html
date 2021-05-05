@@ -19,11 +19,14 @@
     {% endif %}
 
     <style>
+      * {
+        font-family: 'Times New Roman', Times, serif;
+      }
 
       textarea {
         width: 100%;
         height: 150px;
-        padding: 12px 20px;
+        padding: 2px 10px;
         box-sizing: border-box;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -33,12 +36,12 @@
 
       input[type=text], select {
         width: 100%;
-        padding: 2px 20px;
-        margin: 8px 0;
+        padding: 2px 10px;
         display: inline-block;
         border: 1px solid #ccc;
         border-radius: 4px;
         background-color: #f8f8f8;
+        color: #ffffff;
         box-sizing: border-box;
       }
 
@@ -146,6 +149,7 @@
                     {% csrf_token %}
                     <br/>
                     <select id="genre" name="genre">
+                      <option value="" disabled selected>Select Genre</option>
                       <option value="W">World</option>
                       <option value="F">Finance</option>
                       <option value="P">Politics</option>
@@ -158,8 +162,8 @@
                     <input type="text" id="author2" name="author2" placeholder="Author 2">
                     <input type="text" id="url1" name="url1" placeholder="URL to Article 1">
                     <input type="text" id="url2" name="url2" placeholder="URL to Article 2">
-                    <textarea id="article1" rows="6" cols="42" name="article1" placeholder="Enter First Article" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: gray; font-size: small;"></textarea>
-                    <textarea id="article2" rows="6" cols="42" name="article2" placeholder="Enter Second Article" style="font-family: 'Times New Roman', Times, serif; scrollbar-width: 10px; scrollbar-base-color: darkgrey; scrollbar-highlight-color: black; border-color: gray; font-size: small;"></textarea>
+                    <textarea id="article1" rows="6" cols="42" name="article1" placeholder="Enter First Article"></textarea>
+                    <textarea id="article2" rows="6" cols="42" name="article2" placeholder="Enter Second Article"></textarea>
                     <input type="submit" value="Process Articles" class="button" style="font-family: 'Times New Roman', Times, serif; vertical-align:middle">
                 </form>
                 <br/>
