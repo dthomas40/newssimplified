@@ -47,6 +47,12 @@
         resize: none;
       }
 
+      .column {
+        float: left;
+        width: 50%;
+        padding: 10px;
+      }
+
       /* width */
       ::-webkit-scrollbar {
         width: 10px;
@@ -139,12 +145,12 @@
     </header>
     <main role="main" class="container">
       <div class="row">
-        <div>
+        <div class="column">
           <div>
             {% block content %}{% endblock %}
           </div>
         </div>
-        <div>
+        <div class="column">
             <div class="content-section">
                 <h3 style="font-family: 'Times New Roman', Times, serif; ">Process Articles</h3>
                 <form action ="/external/" method="post">
