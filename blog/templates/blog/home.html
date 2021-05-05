@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 {% block content %}
     {% for post in posts reversed %}
-        <article>
+        <article class="media content-section">
           <div>
             <div class="article-metadata">
               <small style="font-family: 'Times New Roman', Times, serif;" class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
