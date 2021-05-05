@@ -29,10 +29,10 @@ def button(request):
         title = title[:96]+'...'
 
     if len(author1)>99:
-        author1 = author1[:96]+'...'
+        author1 = author1[0][:96]+'...'
 
     if len(author2)>99:
-        author2 = author2[:96]+'...'
+        author2 = author2[0][:96]+'...'
 
     if len(url1)>99:
         url1 = url1[:96]+'...'
